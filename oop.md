@@ -4,7 +4,9 @@
 
 ## Key Concepts
 
-### Classes and Objects
+
+## Classes and Objects:
+
 - **Class**: A blueprint for creating objects. It defines a set of attributes and behaviors (methods) that the objects created from the class will have.
 - **Object**: An instance of a class. Objects are specific realizations of the class template.
 
@@ -20,11 +22,11 @@ class Ninja:
 naruto = Ninja(name="Naruto Uzumaki", village="Konoha", rank="Hokage")
 print(naruto.name)  # Output: Naruto Uzumaki
 ```
-### Encapsulation in Naruto
+## Encapsulation in Naruto:
 
 **Definition**: Encapsulation is the bundling of data and methods that operate on that data into a single unit, typically a class, while restricting access to some of the object's components.
 
-## Naruto Analogy:
+### Naruto Analogy:
 
 1. **Data Protection**:
    - **Ninja Secrets**: Just like a ninja (e.g., Naruto) doesn't reveal all their techniques, encapsulation keeps certain data private.
@@ -38,6 +40,55 @@ print(naruto.name)  # Output: Naruto Uzumaki
    - **Using Techniques**: A ninja must perform hand signs to execute jutsu, just like methods allow controlled access to an object's data.
    - **Example**: To learn Naruto's chakra level, one would need to interact with him, not access his internal state directly.
 
-## Conclusion:
+### Conclusion:
 Encapsulation in programming is like a ninja managing their abilities—keeping some information private and allowing interaction only through specific methods to protect their strengths and weaknesses.
 
+## Inheritance:
+
+**Inheritance** is a mechanism that allows one class (known as a **subclass** or **derived class**) to inherit properties and behaviors (methods) from another class (known as a **superclass** or **base class**). This promotes code reusability and establishes a natural hierarchy between classes.
+
+### Key Points of Inheritance:
+- **Code Reusability**: You can use existing code from a base class without having to rewrite it, reducing redundancy.
+- **Hierarchy**: It establishes a parent-child relationship between classes, which can reflect real-world relationships.
+- **Overriding**: A subclass can provide a specific implementation of a method that is already defined in its superclass.
+
+## Example of Inheritance
+
+Imagine we have a base class called `Ninja`, and we want to create specific types of ninjas like `Shinobi` and `Jonin`. 
+
+```python
+class Ninja:
+    def __init__(self, name, village):
+        self.name = name
+        self.village = village
+
+    def attack(self):
+        return f"{self.name} attacks!"
+
+# Subclass: Shinobi
+class Shinobi(Ninja):
+    def __init__(self, name, village, stealth_level):
+        super().__init__(name, village)  # Call to the base class constructor
+        self.stealth_level = stealth_level
+
+    def sneak(self):
+        return f"{self.name} sneaks with stealth level {self.stealth_level}."
+
+# Subclass: Jonin
+class Jonin(Ninja):
+    def __init__(self, name, village, experience_level):
+        super().__init__(name, village)  # Call to the base class constructor
+        self.experience_level = experience_level
+
+    def lead(self):
+        return f"{self.name} leads the team with experience level {self.experience_level}."
+
+# Creating objects of subclasses
+shino = Shinobi(name="Shino Aburame", village="Konoha", stealth_level=10)
+kakashi = Jonin(name="Kakashi Hatake", village="Konoha", experience_level=5)
+
+print(shino.attack())  # Output: Shino Aburame attacks!
+print(shino.sneak())   # Output: Shino Aburame sneaks with stealth level 10.
+print(kakashi.attack())  # Output: Kakashi Hatake attacks!
+print(kakashi.lead())   # Output: Kakashi Hatake leads the team with experience level 5.
+```
