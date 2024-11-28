@@ -92,3 +92,76 @@ print(shino.sneak())   # Output: Shino Aburame sneaks with stealth level 10.
 print(kakashi.attack())  # Output: Kakashi Hatake attacks!
 print(kakashi.lead())   # Output: Kakashi Hatake leads the team with experience level 5.
 ```
+
+## Polymorphism: 
+
+is a concept that allows objects to perform the same action but in different ways. Let’s explore this concept using **Naruto** characters and scenarios.
+
+
+
+### What is Polymorphism?
+
+In Naruto, many characters are ninjas with unique techniques. Despite their differences, they share common actions, like attacking. Polymorphism in OOP is similar: different objects (ninjas) can use the same method but perform it differently based on their specialization.
+
+
+### Types of Polymorphism
+
+### **1. Compile-Time Polymorphism (Method Overloading)**
+
+This is like a ninja using multiple variations of a technique. For example:
+
+- Kakashi’s **Sharingan** can:
+  - Copy techniques.
+  - Trap enemies in Genjutsu.
+  - Predict movements.
+
+In programming, this is achieved by defining multiple methods with the same name but different parameters.
+
+**Example in Code**:
+```python
+class Ninja:
+    def attack(self, target):
+        return f"Attacking {target} with basic attack."
+
+    def attack(self, target, technique):
+        return f"Attacking {target} using {technique}."
+
+# Usage
+kakashi = Ninja()
+print(kakashi.attack("enemy", "Sharingan Genjutsu"))
+# Output: Attacking enemy using Sharingan Genjutsu.
+```
+
+### **2. Run-Time Polymorphism (Method Overriding)**
+
+This is like different ninja clans having unique signature jutsu:
+
+- Naruto uses Rasengan.
+  - Sasuke uses Chidori.
+  - Rock Lee relies on Taijutsu.
+In programming, this is achieved by overriding a method in a subclass.
+
+**Example in Code**:
+```python
+class Ninja:
+    def attack(self):
+        return "Basic attack!"
+
+class Naruto(Ninja):
+    def attack(self):
+        return "Naruto attacks with Rasengan!"
+
+class Sasuke(Ninja):
+    def attack(self):
+        return "Sasuke attacks with Chidori!"
+
+# Usage
+ninjas = [Naruto(), Sasuke()]
+for ninja in ninjas:
+    print(ninja.attack())
+
+# Output:
+# Naruto attacks with Rasengan!
+# Sasuke attacks with Chidori!
+
+```
