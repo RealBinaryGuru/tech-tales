@@ -20,3 +20,24 @@ class Ninja:
 naruto = Ninja(name="Naruto Uzumaki", village="Konoha", rank="Hokage")
 print(naruto.name)  # Output: Naruto Uzumaki
 ```
+### Encapsulation in Naruto
+
+**Definition**: Encapsulation is the bundling of data and methods that operate on that data into a single unit, typically a class, while restricting access to some of the object's components.
+
+## Naruto Analogy:
+
+1. **Data Protection**:
+   - **Ninja Secrets**: Just like a ninja (e.g., Naruto) doesn't reveal all their techniques, encapsulation keeps certain data private.
+   - **Example**: Naruto has powerful techniques like **Rasengan**, which he uses strategically without disclosing their details.
+
+2. **Public and Private Access**:
+   - **Public Methods**: Basic techniques (like **Transformation Jutsu**) are known to everyone.
+   - **Private Methods**: Advanced skills (like **Sage Mode**) are kept secret and shared only when necessary.
+
+3. **Controlled Interaction**:
+   - **Using Techniques**: A ninja must perform hand signs to execute jutsu, just like methods allow controlled access to an object's data.
+   - **Example**: To learn Naruto's chakra level, one would need to interact with him, not access his internal state directly.
+
+## Conclusion:
+Encapsulation in programming is like a ninja managing their abilities—keeping some information private and allowing interaction only through specific methods to protect their strengths and weaknesses.
+
