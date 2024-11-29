@@ -22,7 +22,7 @@ class Ninja:
 naruto = Ninja(name="Naruto Uzumaki", village="Konoha", rank="Hokage")
 print(naruto.name)  # Output: Naruto Uzumaki
 ```
-## Encapsulation in Naruto:
+## Encapsulation:
 
 **Definition**: Encapsulation is the bundling of data and methods that operate on that data into a single unit, typically a class, while restricting access to some of the object's components.
 
@@ -164,4 +164,64 @@ for ninja in ninjas:
 # Naruto attacks with Rasengan!
 # Sasuke attacks with Chidori!
 
+```
+
+## Abstraction:
+is the process of hiding complex details and showing only the essential features of an object or concept. In OOP, abstraction allows developers to define methods that declare the functionality but not the specifics of how it is implemented.
+
+In Naruto, abstraction can be understood by looking at how techniques (jutsu) are used:
+
+
+### 1. Using Jutsu Without Knowing How They Work:
+- Ninjas perform powerful techniques (e.g., **Shadow Clone Jutsu**) without everyone needing to know how the technique is actually implemented. For example:
+  - **Naruto's Shadow Clone Jutsu**: The village ninja only need to see the result (multiple clones appear). They don’t need to understand the inner workings of chakra splitting.
+- In programming, this is like having an abstract class or method where the "how" is hidden, and only the "what" is defined.
+
+---
+
+### 2. Abstracting Jutsu Types:
+- All jutsu can be grouped into broad categories (e.g., **Ninjutsu, Taijutsu, Genjutsu**). The details of how each jutsu works are abstracted, and only their category and purpose are defined.
+- For example:
+  - **Ninjutsu**: Uses chakra to manipulate elements or create effects.
+  - **Taijutsu**: Focuses on physical combat and requires no chakra.
+  - **Genjutsu**: Alters perception using illusions.
+- Each category defines an abstract "framework" that individual techniques (e.g., **Rasengan, Chidori, Leaf Hurricane**) implement differently.
+
+```python 
+from abc import ABC, abstractmethod
+
+# Abstract class
+class Jutsu(ABC):
+    @abstractmethod
+    def execute(self):
+        pass  # Abstract method, no implementation
+
+# Ninjutsu implementation
+class Ninjutsu(Jutsu):
+    def execute(self):
+        return "Performing Ninjutsu with chakra manipulation!"
+
+# Taijutsu implementation
+class Taijutsu(Jutsu):
+    def execute(self):
+        return "Performing Taijutsu with physical combat!"
+
+# Genjutsu implementation
+class Genjutsu(Jutsu):
+    def execute(self):
+        return "Performing Genjutsu to alter perception!"
+
+# Using the abstracted Jutsu types
+def perform_jutsu(jutsu: Jutsu):
+    print(jutsu.execute())
+
+# Creating objects
+ninjutsu = Ninjutsu()
+taijutsu = Taijutsu()
+genjutsu = Genjutsu()
+
+# Perform abstracted actions
+perform_jutsu(ninjutsu)  # Output: Performing Ninjutsu with chakra manipulation!
+perform_jutsu(taijutsu)  # Output: Performing Taijutsu with physical combat!
+perform_jutsu(genjutsu)  # Output: Performing Genjutsu to alter perception!
 ```
